@@ -2,15 +2,15 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100%;
-    grid-template-areas: "rock"
-                         "paper"
-                         "scissors";
+    grid-template-rows: 40% 60%;
+    grid-template-areas: "rock paper scissors" 
+                         "display display display";
     position: relative;
 }
 
 section {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
 }
@@ -23,4 +23,42 @@ button {
     border: 1px black solid;
     border-radius: 5px;
     justify-content: center;
+}
+
+.display {
+    grid-area: display;
+    grid-column: 1 / 4;
+}
+
+#one {
+    grid-area: rock;
+}
+
+#two {
+    grid-area: scissors;
+}
+
+#three {
+    grid-area: paper;
+}
+
+#title {
+    position: relative;
+    align-self: flex-start;
+    left: 100px;
+}
+
+#player-score {
+    align-self: center;
+    position: relative;
+    right: 40px;
+    bottom: 80px
+}
+
+#computer-score {
+    align-self: center;
+    position: relative;
+    left: 20px;
+    bottom: 80px
+}
 }

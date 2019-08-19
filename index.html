@@ -5,14 +5,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section>
+  <section id="one">
     <button class="button" id="rock">Rock</button>
   </section>
-  <section>
+  <section id="two">
     <button class="button" id="scissors">Scissors</button>
   </section>
-  <section>
+  <section id="three">
     <button class="button" id="paper">Paper</button>
+  </section>
+  <section class="display">
+    <div id="title">
+      <h3>Results</h3>
+    </div>
+    <div id="player-score">
+      <h4>Your Score</h4>
+    </div>
+    <div id="computer-score">
+      <h4>Computer Score</h4>
+    </div>
   </section>
   <script>
 
@@ -20,6 +31,11 @@
     let computerScore = 0;
     let yourScore = 0;
     let choice = "";
+    const playerscore = document.querySelector('#player-score');
+    const computerscore = document.querySelector('#computer-score');
+    const title = document.querySelector('#title');
+    const buttons = document.querySelectorAll('.button');
+    const para = document.createElement('p');
 
     function computerPlay() {
         let number = Math.random()*3;
@@ -37,13 +53,16 @@
         computerPlay();
         if ((e.target.matches('#scissors') && choice === "paper") || (e.target.matches('#rock') && choice === "scissors") || (e.target.matches('#paper') && choice === "rock")) {
             result = "you win";
-            console.log(`You win, your choice beats computer's choice of ${choice}!`);
+            para.textContent = `You win, you beat computer's ${choice}!`;
+            title.appendChild(para);
         } else if ((e.target.matches('#rock') && choice === "paper") || (e.target.matches('#paper') && choice === "scissors") || (e.target.matches('#scissors') && choice === "rock")) {
             result = "computer wins";
-            console.log(`You lose, your choice loses to computer's choice of ${choice}!`);
+            para.textContent = `You lose, you lost to computer's ${choice}!`;
+            title.appendChild(para);
         } else {
             result = "tie";
-            console.log(`It's a tie, the computer chose ${choice} as well`)
+            para.textContent = `It's a tie, the computer chose ${choice}!`;
+            title.appendChild(para);
         }
         keepScore();
         console.log(`Your score ${yourScore} VS Computer's Score ${computerScore}`);
@@ -58,8 +77,8 @@
         }
     }
     
-    const buttons = document.querySelectorAll('.button');
     buttons.forEach(button => button.addEventListener('click', playRound));
+    
   </script>
 </body>
 </html>
