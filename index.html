@@ -35,7 +35,18 @@
     const computerscore = document.querySelector('#computer-score');
     const title = document.querySelector('#title');
     const buttons = document.querySelectorAll('.button');
+
     const para = document.createElement('p');
+    title.appendChild(para);
+    para.setAttribute('style', 'text-align: center;')
+
+    const playerresults = document.createElement('p');
+    playerscore.appendChild(playerresults);
+    playerresults.setAttribute('style', 'text-align: center;')
+
+    const computerresults = document.createElement('p');
+    computerscore.appendChild(computerresults);
+    computerresults.setAttribute('style', 'text-align: center;')
 
     function computerPlay() {
         let number = Math.random()*3;
@@ -54,19 +65,16 @@
         if ((e.target.matches('#scissors') && choice === "paper") || (e.target.matches('#rock') && choice === "scissors") || (e.target.matches('#paper') && choice === "rock")) {
             result = "you win";
             para.textContent = `You win, you beat computer's ${choice}!`;
-            title.appendChild(para);
         } else if ((e.target.matches('#rock') && choice === "paper") || (e.target.matches('#paper') && choice === "scissors") || (e.target.matches('#scissors') && choice === "rock")) {
             result = "computer wins";
             para.textContent = `You lose, you lost to computer's ${choice}!`;
-            title.appendChild(para);
         } else {
             result = "tie";
             para.textContent = `It's a tie, the computer chose ${choice}!`;
-            title.appendChild(para);
         }
         keepScore();
-        console.log(`Your score ${yourScore} VS Computer's Score ${computerScore}`);
-        return result;
+        playerresults.textContent = `${yourScore}`;
+        computerresults.textContent = `${computerScore}`;
       }
 
     function keepScore() {

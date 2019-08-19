@@ -42,6 +42,10 @@ button {
     grid-area: paper;
 }
 
+.display > div {
+    text-align: center;
+}
+
 #title {
     position: relative;
     align-self: flex-start;
@@ -52,13 +56,12 @@ button {
     align-self: center;
     position: relative;
     right: 40px;
-    bottom: 80px
+    bottom: 80px;
 }
 
 #computer-score {
     align-self: center;
     position: relative;
     left: 20px;
-    bottom: 80px
-}
+    bottom: 80px;
 }
