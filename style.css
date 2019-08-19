@@ -1,0 +1,26 @@
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "rock"
+                         "paper"
+                         "scissors";
+    position: relative;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border: 1px black solid;
+    border-radius: 5px;
+    justify-content: center;
+}
