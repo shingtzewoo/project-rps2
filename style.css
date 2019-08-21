@@ -49,19 +49,22 @@ button {
 #title {
     position: relative;
     align-self: flex-start;
-    left: 100px;
 }
 
 #player-score {
     align-self: center;
-    position: relative;
-    right: 40px;
-    bottom: 80px;
+    position: absolute;
+    right: 550px;
+    bottom: 250px;
+    height: 100px;
+    width: 100px;
 }
 
 #computer-score {
     align-self: center;
-    position: relative;
-    left: 20px;
-    bottom: 80px;
+    position: absolute;
+    left: 550px;
+    bottom: 250px;
+    height: 100px;
+    width: 100px;
 }

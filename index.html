@@ -83,6 +83,11 @@
         } else if (result === "computer wins") {
             computerScore+=1;
         }
+        if (yourScore === 5 ) {
+          para.textContent = `The game is over, you won!`
+        } else if (computerScore === 5) {
+          para.textContent = `The game is over, the computer won!`
+        }
     }
     
     buttons.forEach(button => button.addEventListener('click', playRound));
